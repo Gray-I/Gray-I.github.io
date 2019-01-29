@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="前言前端網站初始化常需要透過一個或多個$.Ajax先跟後端要取資料，你可以想像$.Ajax是送出去的一隻鴿子，每一隻鴿子都有自己的目標地，腳下裝著要帶給後端的訊息，這些鴿子訪問完目標地後，會把你需要的資料帶回來，讓你顯示在前端網頁上， 但你不太確定這些鴿子什麼時候回來，你也不確定這些鴿子是否會帶回正確的資料(假如後端程式出錯)，你網站初始化時，不太可能等這些鴿子都回來再繼續下一個步驟，&amp;nbsp;">
+<meta name="description" content="前言前端網站初始化常需要透過一個或多個$.Ajax先跟後端要取資料，你可以想像$.Ajax是送出去的一隻鴿子，每一隻鴿子都有自己的目標地，腳下裝著要帶給後端的訊息，這些鴿子訪問完目標地後，會把你需要的資料帶回來，讓你顯示在前端網頁上，">
 <meta name="keywords" content="JQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【JQuery】$.when、$.Deferred">
 <meta property="og:url" content="https://gray-i.github.io/2018/09/10/2018-09-10/index.html">
 <meta property="og:site_name" content="今天天氣好冷">
-<meta property="og:description" content="前言前端網站初始化常需要透過一個或多個$.Ajax先跟後端要取資料，你可以想像$.Ajax是送出去的一隻鴿子，每一隻鴿子都有自己的目標地，腳下裝著要帶給後端的訊息，這些鴿子訪問完目標地後，會把你需要的資料帶回來，讓你顯示在前端網頁上， 但你不太確定這些鴿子什麼時候回來，你也不確定這些鴿子是否會帶回正確的資料(假如後端程式出錯)，你網站初始化時，不太可能等這些鴿子都回來再繼續下一個步驟，&amp;nbsp;">
+<meta property="og:description" content="前言前端網站初始化常需要透過一個或多個$.Ajax先跟後端要取資料，你可以想像$.Ajax是送出去的一隻鴿子，每一隻鴿子都有自己的目標地，腳下裝著要帶給後端的訊息，這些鴿子訪問完目標地後，會把你需要的資料帶回來，讓你顯示在前端網頁上，">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-01-29T17:16:00.652Z">
+<meta property="og:updated_time" content="2019-01-29T17:49:20.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【JQuery】$.when、$.Deferred">
-<meta name="twitter:description" content="前言前端網站初始化常需要透過一個或多個$.Ajax先跟後端要取資料，你可以想像$.Ajax是送出去的一隻鴿子，每一隻鴿子都有自己的目標地，腳下裝著要帶給後端的訊息，這些鴿子訪問完目標地後，會把你需要的資料帶回來，讓你顯示在前端網頁上， 但你不太確定這些鴿子什麼時候回來，你也不確定這些鴿子是否會帶回正確的資料(假如後端程式出錯)，你網站初始化時，不太可能等這些鴿子都回來再繼續下一個步驟，&amp;nbsp;">
+<meta name="twitter:description" content="前言前端網站初始化常需要透過一個或多個$.Ajax先跟後端要取資料，你可以想像$.Ajax是送出去的一隻鴿子，每一隻鴿子都有自己的目標地，腳下裝著要帶給後端的訊息，這些鴿子訪問完目標地後，會把你需要的資料帶回來，讓你顯示在前端網頁上，">
 
 
 
@@ -395,6 +395,7 @@
 
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前端網站初始化常需要透過一個或多個$.Ajax先跟後端要取資料，<br>你可以想像<strong>$.Ajax是送出去的一隻鴿子</strong>，<br><strong>每一隻鴿子都有自己的目標地，腳下裝著要帶給後端的訊息，</strong><br><strong>這些鴿子訪問完目標地後，會把你需要的資料帶回來，讓你顯示在前端網頁上，</strong></p>
+<a id="more"></a>
 <p>但<strong>你不太確定這些鴿子什麼時候回來</strong>，<br><strong>你也不確定這些鴿子是否會帶回正確的資料</strong>(假如後端程式出錯)，<br>你網站初始化時，不太可能等這些鴿子都回來再繼續下一個步驟，<br>&nbsp;</p>
 <h3 id="when配合-Deferred"><a href="#when配合-Deferred" class="headerlink" title="$.when配合$.Deferred()"></a>$.when配合$.Deferred()</h3><p>透過JQuery的$.when配合$.Deferred()完成多個$.ajax的異步處理，<br>當鴿子送出去後，你可以先執行其他的程式碼，<br>當鴿子回來後，再利用鴿子帶回的資料執行部分程式碼，<br>控制這群鴿子回來時，如果資料正確則做什麼、如果產生錯誤則做什麼，及不管如何皆執行什麼，</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$.when(function1(), function2()).done(<span class="function"><span class="keyword">function</span>(<span class="params">result1, result2</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'success code'</span>);</span><br><span class="line">&#125;).fail(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'error code'</span>);</span><br><span class="line">&#125;).always(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'always do'</span>);</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">function1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> dfd = $.Deferred();</span><br><span class="line">	$.ajax(&#123;</span><br><span class="line">		url : <span class="string">''</span>,</span><br><span class="line">		type: <span class="string">'GET'</span>,</span><br><span class="line">		date: &#123;&#125;,</span><br><span class="line">	&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">		dfd.resolve(res);</span><br><span class="line">	&#125;).fail(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;        </span><br><span class="line">		dfd.reject();</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> dfd.promise();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">function2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> dfd = $.Deferred();</span><br><span class="line">	$.ajax(&#123;</span><br><span class="line">		url : <span class="string">''</span>,</span><br><span class="line">		type: <span class="string">'GET'</span>,</span><br><span class="line">		date: &#123;&#125;,</span><br><span class="line">	&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">		dfd.resolve(res);</span><br><span class="line">	&#125;).fail(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;        </span><br><span class="line">		dfd.reject();</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> dfd.promise();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -542,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>

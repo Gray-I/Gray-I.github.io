@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="前言一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，如果背後搜尋資料很大量的話，很容易有效能問題，&amp;nbsp; setTimeout()一個簡單的方式，用javascript的setTimeout來製造這個延遲，當使用者輸入第一">
+<meta name="description" content="前言一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，如果背後搜尋資料很大量的話，很容易有效能問題，">
 <meta name="keywords" content="JQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【JQuery】使用keyup來做關鍵字搜尋，延遲一段時間再做搜尋">
 <meta property="og:url" content="https://gray-i.github.io/2018/09/14/2018-09-14/index.html">
 <meta property="og:site_name" content="今天天氣好冷">
-<meta property="og:description" content="前言一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，如果背後搜尋資料很大量的話，很容易有效能問題，&amp;nbsp; setTimeout()一個簡單的方式，用javascript的setTimeout來製造這個延遲，當使用者輸入第一">
+<meta property="og:description" content="前言一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，如果背後搜尋資料很大量的話，很容易有效能問題，">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-01-29T17:21:10.670Z">
+<meta property="og:updated_time" content="2019-01-29T17:49:28.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【JQuery】使用keyup來做關鍵字搜尋，延遲一段時間再做搜尋">
-<meta name="twitter:description" content="前言一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，如果背後搜尋資料很大量的話，很容易有效能問題，&amp;nbsp; setTimeout()一個簡單的方式，用javascript的setTimeout來製造這個延遲，當使用者輸入第一">
+<meta name="twitter:description" content="前言一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，如果背後搜尋資料很大量的話，很容易有效能問題，">
 
 
 
@@ -394,7 +394,7 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，<br>會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，<br>例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，<br><strong>如果背後搜尋資料很大量的話，很容易有效能問題，</strong><br>&nbsp;</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，<br>會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，<br>例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，<br><strong>如果背後搜尋資料很大量的話，很容易有效能問題，</strong><br><a id="more"></a><br>&nbsp;</p>
 <h3 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout()"></a>setTimeout()</h3><p>一個簡單的方式，用javascript的setTimeout來製造這個延遲，<br>當使用者輸入第一個字時，那就設一個timeout變數給他，<br>每當使用者輸入完資料，都會先等待這個延遲時間，</p>
 <p>如果使用者繼續輸入資料，那就把舊延遲清除，換上新延遲，<br>如果使用者已經輸入完畢，那延遲時間後才會開始搜尋，</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> search_Timeout; <span class="comment">//先初始化一個timeout變數</span></span><br><span class="line"></span><br><span class="line">$input.keyup(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> searchFunction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">// 利用$input.val()當關鍵字搜尋</span></span><br><span class="line">	&#125;;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">if</span>(search_Timeout) &#123;</span><br><span class="line">		clearTimeout(search_Timeout);</span><br><span class="line">	&#125;</span><br><span class="line">	search_Timeout = setTimeout(searchFunction, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -531,7 +531,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
