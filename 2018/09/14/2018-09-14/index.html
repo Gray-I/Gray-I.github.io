@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="JQuery,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="資質差，Java課程修了三次，但還是不死心。 支持柯南配灰原。 古裝劇、金光、棒球、籃球。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="關於我">
-<meta property="og:url" content="https://gray-i.github.io/about/index.html">
+<meta name="description" content="前言一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，如果背後搜尋資料很大量的話，很容易有效能問題，&amp;nbsp; setTimeout()一個簡單的方式，用javascript的setTimeout來製造這個延遲，當使用者輸入第一">
+<meta name="keywords" content="JQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【JQuery】使用keyup來做關鍵字搜尋，延遲一段時間再做搜尋">
+<meta property="og:url" content="https://gray-i.github.io/2018/09/14/2018-09-14/index.html">
 <meta property="og:site_name" content="今天天氣好冷">
-<meta property="og:description" content="資質差，Java課程修了三次，但還是不死心。 支持柯南配灰原。 古裝劇、金光、棒球、籃球。">
+<meta property="og:description" content="前言一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，如果背後搜尋資料很大量的話，很容易有效能問題，&amp;nbsp; setTimeout()一個簡單的方式，用javascript的setTimeout來製造這個延遲，當使用者輸入第一">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-01-08T15:13:34.478Z">
+<meta property="og:updated_time" content="2019-01-29T17:21:10.670Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="關於我">
-<meta name="twitter:description" content="資質差，Java課程修了三次，但還是不死心。 支持柯南配灰原。 古裝劇、金光、棒球、籃球。">
+<meta name="twitter:title" content="【JQuery】使用keyup來做關鍵字搜尋，延遲一段時間再做搜尋">
+<meta name="twitter:description" content="前言一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，如果背後搜尋資料很大量的話，很容易有效能問題，&amp;nbsp; setTimeout()一個簡單的方式，用javascript的setTimeout來製造這個延遲，當使用者輸入第一">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://gray-i.github.io/about/">
+  <link rel="canonical" href="https://gray-i.github.io/2018/09/14/2018-09-14/">
 
 
 
 
 
-  <title>關於我 | 今天天氣好冷</title>
+  <title>【JQuery】使用keyup來做關鍵字搜尋，延遲一段時間再做搜尋 | 今天天氣好冷</title>
   
 
 
@@ -293,37 +294,174 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gray-i.github.io/2018/09/14/2018-09-14/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灰原">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/grayI.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="今天天氣好冷">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">關於我</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <hr>
-<p>資質差，Java課程修了三次，但還是不死心。</p>
-<p>支持柯南配灰原。</p>
-<p>古裝劇、金光、棒球、籃球。</p>
-
+          <h1 class="post-title" itemprop="name headline">【JQuery】使用keyup來做關鍵字搜尋，延遲一段時間再做搜尋</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-14T13:23:37+08:00">
+                2018-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/14/2018-09-14/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/14/2018-09-14/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/14/2018-09-14/" class="leancloud_visitors" data-flag-title="【JQuery】使用keyup來做關鍵字搜尋，延遲一段時間再做搜尋">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>一開始在做搜尋輸入時，如果直接使用$(‘input’).keyup(function()的方式，<br>會產生一個使用者關鍵字還沒輸入完，但搜尋已經在跑了，<br>例如你想搜尋’logdown’，當按下’l’開始，他就已經跑過一次搜尋，<br><strong>如果背後搜尋資料很大量的話，很容易有效能問題，</strong><br>&nbsp;</p>
+<h3 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout()"></a>setTimeout()</h3><p>一個簡單的方式，用javascript的setTimeout來製造這個延遲，<br>當使用者輸入第一個字時，那就設一個timeout變數給他，<br>每當使用者輸入完資料，都會先等待這個延遲時間，</p>
+<p>如果使用者繼續輸入資料，那就把舊延遲清除，換上新延遲，<br>如果使用者已經輸入完畢，那延遲時間後才會開始搜尋，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> search_Timeout; <span class="comment">//先初始化一個timeout變數</span></span><br><span class="line"></span><br><span class="line">$input.keyup(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> searchFunction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">// 利用$input.val()當關鍵字搜尋</span></span><br><span class="line">	&#125;;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">if</span>(search_Timeout) &#123;</span><br><span class="line">		clearTimeout(search_Timeout);</span><br><span class="line">	&#125;</span><br><span class="line">	search_Timeout = setTimeout(searchFunction, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>&nbsp;</p>
+<h3 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h3><p>這種方式可以簡單地避免keyup時就跑一次搜尋的問題<br>以上面的一秒鐘為例，在延遲的一秒內輸入完Jquery這個關鍵字，那就會只執行一次關鍵字為Jquery的搜尋</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JQuery/" rel="tag"># JQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/10/2018-09-10/" rel="next" title="【JQuery】$.when、$.Deferred">
+                <i class="fa fa-chevron-left"></i> 【JQuery】$.when、$.Deferred
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/20/2018-09-20/" rel="prev" title="【GoogleMap】利用Google Circle及timeout做出地圖marker閃爍效果">
+                【GoogleMap】利用Google Circle及timeout做出地圖marker閃爍效果 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -366,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -420,6 +567,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setTimeout"><span class="nav-number">2.</span> <span class="nav-text">setTimeout()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#結語"><span class="nav-number">3.</span> <span class="nav-text">結語</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -584,9 +747,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gray-i.github.io/about/index.html';
-          this.page.identifier = 'about/index.html';
-          this.page.title = '關於我';
+          this.page.url = 'https://gray-i.github.io/2018/09/14/2018-09-14/';
+          this.page.identifier = '2018/09/14/2018-09-14/';
+          this.page.title = '【JQuery】使用keyup來做關鍵字搜尋，延遲一段時間再做搜尋';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://gray-i.disqus.com/embed.js';
